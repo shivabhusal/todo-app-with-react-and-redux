@@ -30,6 +30,21 @@ export const todos = (state = initialTodoState, action) => {
                 }
             )
         }
+        case TOGGLE_TODO:{
+            console.log(action.payload)
+            return(
+                {
+                    ...state,
+                    data:{
+                        ...state.data,
+                        [action.payload.id]:{
+                            ...state.data[action.payload.id],
+                            completed: !(state.data[action.payload.id].completed)
+                        }
+                    }
+                }
+            )
+        }
 
         default: {
             return state

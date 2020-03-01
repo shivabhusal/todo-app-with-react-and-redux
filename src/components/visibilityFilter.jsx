@@ -7,7 +7,7 @@ function VisibilityFilter({ activeFilter, setFilter }) {
     return (
         Filters.map((filter, i) => (
             <button
-                className={filter == activeFilter ? 'active' : ''}
+                className={filter === activeFilter ? 'active' : ''}
                 onClick={() => setFilter(filter)}
                 key={`filter-${i}`}>
                 {filter}
